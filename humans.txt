@@ -1,0 +1,17 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Sergey Krivoy -- Designer -- fb.com/krivoydesigner
+    Sergey Toy -- Front-end Developer -- fb.com/toydestroyer
+
+# THANKS
+
+    Behance
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    jQuery, Modernizr
+    Ruby, Middleman, Faraday
