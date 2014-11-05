@@ -2508,8 +2508,9 @@ a {
 .project-image {
   background-color: #fff;
   position: relative;
-  z-index: 0; }
-  /* line 249, /Users/toydestroyer/dev/friends/krivoydesigner.com/source/css/krivoy.css.sass */
+  z-index: 0;
+  width: 100%; }
+  /* line 250, /Users/toydestroyer/dev/friends/krivoydesigner.com/source/css/krivoy.css.sass */
   .project-image:after {
     content: "";
     font-family: "FontAwesome";
@@ -2541,7 +2542,7 @@ a {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
 @media screen and (max-width: 600px) {
-  /* line 271, /Users/toydestroyer/dev/friends/krivoydesigner.com/source/css/krivoy.css.sass */
+  /* line 272, /Users/toydestroyer/dev/friends/krivoydesigner.com/source/css/krivoy.css.sass */
   .project-modules {
     width: 100%;
     left: 0;
