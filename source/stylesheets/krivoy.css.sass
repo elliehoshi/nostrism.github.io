@@ -1,0 +1,255 @@
+/*
+ * require_self
+ */
+
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:800,300&subset=latin,cyrillic")
+
+body
+  font-family: 'Open Sans', sans-serif
+  color: #00d78d
+  position: relative
+
+.blocked
+  overflow: hidden
+
+a
+  color: #00d78d
+  transition: color .1s ease
+  text-decoration: none
+  &:hover
+    color: #fff
+  &.a
+    color: #000
+    &:hover
+      color: #fff
+
+.intro
+  height: 500px
+  background-color: #000
+  position: relative
+
+  h1, h2
+    margin: 0
+    padding: 0
+    text-align: center
+  h1
+    text-transform: uppercase
+    font-size: 72px
+  h2
+    font-weight: 300
+    font-size: 24px
+
+.intro-details
+  display: block
+  font-size: 32px
+  position: absolute
+  width: 50px
+  height: 50px
+  text-align: center
+  line-height: 50px
+  z-index: 20
+  transition: all .3s ease
+  &.openned
+    transform: rotate(90deg)
+
+.title
+  height: 400px
+  display: flex
+  justify-content: center
+  flex-direction: column
+  flex-wrap: wrap
+
+.my-rpjects-wrap
+  height: 100px
+  display: flex
+  align-items: flex-start
+  justify-content: center
+
+.my-projects
+  color: #00d78d
+  text-decoration: none
+  border: 1px solid
+  padding: 10px 36px
+  text-transform: uppercase
+  display: block
+  position: relative
+  transition: color .1s linear
+  &:hover
+    color: #fff
+.my-projects-arr
+  display: block
+  position: absolute
+  width: 32px
+  height: 32px
+  top: 42px
+  left: 50%
+  margin-left: -16px
+  text-align: center
+  .no-touch .animated &
+    animation: bounce 1s infinite linear
+
+.contacts
+  width: 100%
+  height: 100%
+  background-color: #00d78d
+  position: fixed
+  box-sizing: padding-box
+  left: 0
+  top: 0
+  display: none
+  margin: 0
+  padding: 2% 0
+  list-style: none
+
+  li
+    font-size: 36px
+    font-weight: 800
+    text-transform: uppercase
+    height: 16%
+    display: flex
+    color: #000
+    justify-content: center
+    align-items: center
+
+@keyframes bounce
+  0%
+    transform: translateY(0px)
+  50%
+    transform: translateY(15px)
+  100%
+    transform: translateY(0px)
+
+@-webkit-keyframes bounce
+  0%
+    transform: translateY(0px)
+  50%
+    transform: translateY(15px)
+  100%
+    transform: translateY(0px)
+
+.projects
+  list-style: none
+  margin: 0
+  padding: 0
+.project
+  height: 200px
+  overflow: hidden
+  .close
+    display: block
+    width: 50px
+    height: 50px
+    position: absolute
+    top: 0
+    right: 0
+    color: #000
+    z-index: 1
+    &:hover
+      color: #fff
+  a
+    display: flex
+    align-items: center
+    justify-content: center
+    color: #00d78d
+    text-decoration: none
+    text-transform: uppercase
+    font-weight: 800
+    font-size: 36px
+    text-align: center
+    width: 100%
+    height: 100%
+    position: relative
+
+  .cover
+    z-index: -1
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background-size: cover
+    background-position: top
+    transform: scale(1.3)
+    filter: blur(10px)
+    // filter: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQoJPGZpbHRlciBpZD0iYmx1ciI+DQoJCTxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjMiIC8+DQoJPC9maWx0ZXI+DQo8L3N2Zz4=#blur)
+
+.no-touch .project-open
+  transition: background-color .1s ease
+  .project-name
+    border: 10px solid transparent
+    padding: 16px 32px
+    transition: border-color .1s ease
+  &:hover
+    background-color: rgba(#000, .5)
+    .project-name
+      border-color: #00d78d
+
+
+.project-details
+  display: none
+  position: fixed
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  background-color: rgba(#000, .5)
+  z-index: 1
+  overflow: scroll
+  -webkit-overflow-scrolling: touch
+
+.project-title
+  height: 200px
+  background-color: #00d78d
+  color: #000
+  font-size: 36px
+  display: flex
+  align-items: center
+  justify-content: center
+  font-weight: 800
+  text-transform: uppercase
+  text-align: center
+  a
+    color: #000
+
+.project-modules
+  position: absolute
+  background-color: #fff
+  width: 600px
+  left: 50%
+  top: 0%
+  margin-left: -300px
+  img
+    max-width: 100%
+    display: block
+
+.project-image
+  background-color: #fff
+  position: relative
+  z-index: 0
+  width: 100%
+  &:after
+    content: ""
+    background: inline-image('spinner.svg')
+    display: block
+    width: 32px
+    height: 32px
+    position: absolute
+    left: 50%
+    top: 50%
+    margin: 0 -16px 0 -16px
+    animation: spin 1s infinite linear
+    z-index: -1
+
+svg
+  fill: currentColor
+
+@keyframes spin
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
+
+@media screen and (max-width: 600px)
+  .project-modules
+    width: 100%
+    left: 0
+    margin-left: 0

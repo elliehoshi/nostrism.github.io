@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= current_page.data.title || "Sergey Krivoy | Web Designer" %></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="stylesheets/normalize.css">
+    <link rel="stylesheet" href="stylesheets/krivoy.css">
+    <script type="text/javascript">
+      var isTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints || navigator.maxTouchPoints;
+      if (!isTouch) {
+        document.documentElement.className = 'no-touch';
+      } else {
+        document.documentElement.className = 'touch';
+      }
+    </script>
+  </head>
+  <body>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: none;">
+      <defs>
+        <g id="fa-bars">
+          <svg viewBox="0 0 2048 2048" xmlns="http://www.w3.org/2000/svg"><path d="M1792 1472v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45z"/></svg>
+        </g>
+        <g id="fa-chevron-down">
+          <svg viewBox="0 0 2048 2048" xmlns="http://www.w3.org/2000/svg"><path d="M1811 936l-742 741q-19 19-45 19t-45-19l-742-741q-19-19-19-45.5t19-45.5l166-165q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45 19l166 165q19 19 19 45.5t-19 45.5z"/></svg>
+        </g>
+        <g id="fa-times">
+          <svg viewBox="0 0 2048 2048" xmlns="http://www.w3.org/2000/svg"><path d="M1618 1450q0 40-28 68l-136 136q-28 28-68 28t-68-28l-294-294-294 294q-28 28-68 28t-68-28l-136-136q-28-28-28-68t28-68l294-294-294-294q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294 294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68l-294 294 294 294q28 28 28 68z"/></svg>
+        </g>
+      </defs>
+    </svg>
+    <header class="intro">
+      <a href="#" class="intro-details" id="details">
+        <svg viewBox="0 0 2048 2048">
+          <use xlink:href="#fa-bars"></use>
+        </svg>
+      </a>
+      <div class="title">
+        <h1>Sergey Krivoy</h1>
+        <h2>I am a designer. Work in Saint Petersburg.</h2>
+      </div>
+      <div class="my-rpjects-wrap">
+        <a href="#" class="my-projects">
+          <div>My Projects</div>
+          <svg viewBox="0 0 2048 2048" class="my-projects-arr">
+            <use xlink:href="#fa-chevron-down"></use>
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <%= yield %>
+
+    <ul class="contacts">
+      <li><a class="a" href="tel:+79217603992">+7 921 760-39-92</a></li>
+      <li><a class="a" href="https://twitter.com/nostrism" target="_blank">Twitter</a></li>
+      <li><a class="a" href="https://www.facebook.com/krivoydesigner" target="_blank">Facebook</a></li>
+      <li><a class="a" href="https://www.behance.net/krivoydesigner" target="_blank">Behance</a></li>
+      <li><a class="a" href="https://www.linkedin.com/in/krivoydesigner" target="_blank">LinkedIn</a></li>
+      <li><a class="a" href="http://thenounproject.com/krivoydesigner/" target="_blank">thenounproject</a></li>
+    </ul>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="javascripts/vendor/jquery-2.1.1.min.js"><\/script>')</script>
+    <script src="javascripts/application.js"></script>
+    <noscript><div><img src="//mc.yandex.ru/watch/22617679" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  </body>
+</html>
