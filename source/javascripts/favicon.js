@@ -1,4 +1,4 @@
-;(function($) {
+;(function() {
 
   'use strict';
 
@@ -13,11 +13,17 @@
   ];
 
   (function favicon(i) {
-    $('link[rel="shortcut icon"]').remove();
-    $('head').append($('<link>').attr('rel', 'shortcut icon').attr('href', favicons[i % 5]));
+    var old_el = document.querySelector('link[rel="shortcut icon"]');
+    if (old_el) {
+      old_el.parentElement.removeChild(old_el);
+    }
+    var new_el = document.createElement('link');
+    new_el.setAttribute('rel', 'shortcut icon');
+    new_el.setAttribute('href', favicons[i % 5]);
+    document.getElementsByTagName('head')[0].appendChild(new_el);
     setTimeout(function() {
       favicon(i + 1);
     }, 1500);
   })(0);
 
-})(jQuery);
+})();
