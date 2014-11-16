@@ -4,7 +4,7 @@
 # TEAM
 
     Sergey Krivoy -- Designer -- fb.com/krivoydesigner
-    Sergey Toy -- Front-end Developer -- fb.com/toydestroyer
+    Sergey Toy -- Developer -- fb.com/toydestroyer
 
 # THANKS
 
@@ -13,5 +13,4 @@
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
-    jQuery, Modernizr
     Ruby, Middleman, Faraday
