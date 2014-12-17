@@ -32,6 +32,8 @@
 # Helpers
 ###
 
+require 'lib/fetch.rb'
+
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
 
@@ -45,23 +47,12 @@ end
 # Reload the browser automatically whenever files change
 configure :development do
   # activate :livereload
+  activate :krivoy_fetch
 end
 
-
-# Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
-
 set :css_dir, 'stylesheets'
-
 set :js_dir, 'javascripts'
-
 set :images_dir, 'images'
-
-require 'lib/fetch.rb'
 
 # Build-specific configuration
 configure :build do

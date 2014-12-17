@@ -1,12 +1,12 @@
 class KrivoyFetch < Middleman::Extension
 
-  def self.debug io
+  # def self.debug io
 
-  end
+  # end
 
-  def logger
-    KrivoyFetch
-  end
+  # def logger
+    # KrivoyFetch
+  # end
 
   def initialize(app, options_hash={}, &block)
     super
@@ -17,21 +17,20 @@ class KrivoyFetch < Middleman::Extension
 
     behance = Faraday.new(:url => ' https://www.behance.net') do |faraday|
       faraday.request  :url_encoded             # form-encode POST params
-      faraday.response :logger                  # log requests to STDOUT
+      # faraday.response :logger                  # log requests to STDOUT
       faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
     end
 
-
     collection_projects = behance.get "/v2/collections/23950617/projects?api_key=#{be_config['api_key']}&access_token=#{be_config['access_token']}"
 
-    logger.debug JSON.parse(collection_projects.body).to_yaml
+    # logger.debug JSON.parse(collection_projects.body).to_yaml
 
     JSON.parse(collection_projects.body)['projects'].each do | collection_project |
       project_tmp = {}
       project_raw = behance.get "/v2/projects/#{collection_project['id']}?api_key=#{be_config['api_key']}&access_token=#{be_config['access_token']}"
       project = JSON.parse(project_raw.body)['project']
       project_tmp[:name] = project['name']
-      puts "Update: #{project['name']} ---\n"
+      puts "Update: #{project['name']}\n"
       project_tmp[:url] = nil
       url = /^url:(.*?)$/.match(project['tags'].last)
       project_tmp[:url] = url[1] unless url.nil?
@@ -40,16 +39,10 @@ class KrivoyFetch < Middleman::Extension
 
     end
 
-    puts @projects.to_json
+    # puts @projects.to_json
 
-  end
+    app.set :projects, @projects
 
-  # alias :included :registered
-
-  helpers do
-    def projects
-      @projects
-    end
   end
 
 end
