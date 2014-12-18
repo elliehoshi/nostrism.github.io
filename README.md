@@ -1,1 +1,0 @@
-# krivoydesigner.ru
