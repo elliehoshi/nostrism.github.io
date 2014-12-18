@@ -1,13 +1,5 @@
 class KrivoyFetch < Middleman::Extension
 
-  # def self.debug io
-
-  # end
-
-  # def logger
-    # KrivoyFetch
-  # end
-
   def initialize(app, options_hash={}, &block)
     super
 
@@ -23,8 +15,6 @@ class KrivoyFetch < Middleman::Extension
 
     collection_projects = behance.get "/v2/collections/23950617/projects?api_key=#{be_config['api_key']}&access_token=#{be_config['access_token']}"
 
-    # logger.debug JSON.parse(collection_projects.body).to_yaml
-
     JSON.parse(collection_projects.body)['projects'].each do | collection_project |
       project_tmp = {}
       project_raw = behance.get "/v2/projects/#{collection_project['id']}?api_key=#{be_config['api_key']}&access_token=#{be_config['access_token']}"
@@ -38,8 +28,6 @@ class KrivoyFetch < Middleman::Extension
       @projects.push(project_tmp)
 
     end
-
-    # puts @projects.to_json
 
     app.set :projects, @projects
 

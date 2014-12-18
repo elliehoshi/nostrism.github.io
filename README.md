@@ -1,4 +1,4 @@
-# Personal website of [Sergey Krivoy](http://www.krivoydesigner.ru)
+# Personal website of [Sergey Krivoy](http://www.krivoydesigner.com)
 You can freely base your project on this code.
 
 ## Before you start
