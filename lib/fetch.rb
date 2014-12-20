@@ -8,9 +8,9 @@ class KrivoyFetch < Middleman::Extension
     be_config = YAML.load_file('be.yml')
 
     behance = Faraday.new(:url => ' https://www.behance.net') do |faraday|
-      faraday.request  :url_encoded             # form-encode POST params
+      faraday.request :url_encoded             # form-encode POST params
       # faraday.response :logger                  # log requests to STDOUT
-      faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+      faraday.adapter Faraday.default_adapter  # make requests with Net::HTTP
     end
 
     collection_projects = behance.get "/v2/collections/23950617/projects?api_key=#{be_config['api_key']}&access_token=#{be_config['access_token']}"
