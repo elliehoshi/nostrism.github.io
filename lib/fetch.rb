@@ -13,7 +13,7 @@ class KrivoyFetch < Middleman::Extension
       faraday.adapter Faraday.default_adapter  # make requests with Net::HTTP
     end
 
-    collection_projects = behance.get "/v2/collections/23950617/projects?api_key=#{be_config['api_key']}&access_token=#{be_config['access_token']}"
+    collection_projects = behance.get "/v2/collections/23950617/projects?api_key=#{be_config['api_key']}&access_token=#{be_config['access_token']}&per_page=20"
 
     JSON.parse(collection_projects.body)['projects'].each do | collection_project |
       project_tmp = {}
